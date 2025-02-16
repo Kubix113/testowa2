@@ -1,0 +1,576 @@
+/* Przykładowe podstawowe style (nawigacja, hero, itp.) -- dostosuj według własnych potrzeb */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Nawigacja */
+nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 12px 50px;
+  border-radius: 30px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #6c63ff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #4b4b4b;
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  background: url('hero-bg.jpg') center/cover no-repeat; /* Opcjonalne tło */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Sekcja Hero */
+.hero {
+  position: relative;
+  min-height: 100vh; /* pełna wysokość okna */
+  background: url('hero-bg.jpg') center/cover no-repeat; /* tło – zmień na swoje */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+/* Nakładka (overlay) – dodaje gradient, dzięki czemu tło nie jest jednolite */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%);
+  z-index: 1;
+}
+
+/* Zawartość hero – aby tekst i przycisk były widoczne nad overlay */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 600px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Przycisk w sekcji hero */
+.btn-hero {
+  background-color: #ff9700;
+  color: #fff;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-hero:hover {
+  background-color: #fb4b02;
+}
+
+
+/* -----------------------------------------
+   Sekcja FEATURES (karty z animacją)
+   ----------------------------------------- */
+.features {
+  display: flex;
+  flex-wrap: wrap; /* Pozwala na zawijanie boxów przy węższych ekranach */
+  justify-content: center; /* Centrujemy boxy w poziomie */
+  gap: 2rem; /* Odstęp między boxami */
+  max-width: 1200px;
+  margin: -50px auto 100px auto; 
+  /* Ujemny top margin (-50px) unosi sekcję w górę względem poprzedniej sekcji.
+     100px na dole zapewnia odstęp od dolnej krawędzi. */
+  padding: 30px 20px;
+}
+
+.feature {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 300px; /* Szerokość każdego boxa */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.feature h3 {
+  color: #6c63ff;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Efekt unoszenia się i większego cienia przy najechaniu */
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Stopka */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  padding: 10px 0;
+  font-size: 0.8rem;
+  color: #333;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+}
+
+/* -----------------------------------------
+   MEDIA QUERIES (opcjonalnie)
+   ----------------------------------------- */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .features {
+    margin: 0 auto 60px auto; 
+    /* Możemy usunąć ujemny margines, aby nie nakładało się na hero */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature {
+    width: 80%;
+    margin: 1rem 0;
+  }
+}
+
+
+/* Dodajemy styl przycisku btn-7 */
+/* Styl dla przycisku */
+/* Animowany przycisk */
+.btn-7 {
+  background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+.btn-7 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-7:before,
+.btn-7:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: rgba(251,75,2,1);
+  box-shadow:
+      -7px -7px 20px 0px rgba(255,255,255,.9),
+      -4px -4px 5px 0px rgba(255,255,255,.9),
+      7px 7px 20px 0px rgba(0,0,0,.2),
+      4px 4px 5px 0px rgba(0,0,0,.3);
+  transition: all 0.3s ease;
+}
+
+.btn-7:before {
+  height: 0%;
+  width: 2px;
+}
+
+.btn-7:after {
+  width: 0%;
+  height: 2px;
+}
+
+.btn-7:hover {
+  color: rgba(251,75,2,1);
+  background: transparent;
+}
+
+.btn-7:hover:before {
+  height: 100%;
+}
+
+.btn-7:hover:after {
+  width: 100%;
+}
+
+.btn-7 span:before,
+.btn-7 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: rgba(251,75,2,1);
+  box-shadow:
+      -7px -7px 20px 0px rgba(255,255,255,.9),
+      -4px -4px 5px 0px rgba(255,255,255,.9),
+      7px 7px 20px 0px rgba(0,0,0,.2),
+      4px 4px 5px 0px rgba(0,0,0,.3);
+  transition: all 0.3s ease;
+}
+
+.btn-7 span:before {
+  width: 2px;
+  height: 0%;
+}
+
+.btn-7 span:after {
+  height: 2px;
+  width: 0%;
+}
+
+.btn-7 span:hover:before {
+  height: 100%;
+}
+
+.btn-7 span:hover:after {
+  width: 100%;
+}
+
+.btn-7 a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+/* -----------------------------------------
+   Sekcja Regulamin
+   ----------------------------------------- */
+/* -----------------------------------------
+   Sekcja Regulamin
+   ----------------------------------------- */
+   .regulamin {
+    padding: 120px 20px 60px 20px;
+    background-color: #f1f1f1;
+    min-height: 100vh;
+  }
+  
+  .regulamin-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .regulamin h2 {
+    font-size: 2.5rem;
+    color: #6c63ff;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .regulamin p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .regulamin ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .regulamin li {
+    margin-bottom: 15px;
+  }
+  
+  .regulamin ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .regulamin a {
+    color: #6c63ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .regulamin a:hover {
+    color: #fb4b02;
+  }
+  
+/* -----------------------------------------
+   Sekcja Nabór
+   ----------------------------------------- */
+   .nabor {
+    padding: 100px 20px;
+    background: url('background.jpg') center/cover no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nabor-container {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.nabor h2 {
+    font-size: 2.5rem;
+    color: #6c63ff;
+    margin-bottom: 10px;
+}
+
+.subtext {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Animowany Przycisk "Dołącz do Discorda" */
+.btn-7 {
+    display: inline-block;
+    background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 14px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-7:hover {
+    background: transparent;
+    color: rgba(251,75,2,1);
+    border: 2px solid rgba(251,75,2,1);
+}
+
+/* Stopka */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8rem;
+}
+/* -----------------------------------------
+   Sekcja Nowości
+   ----------------------------------------- */
+.nowosci {
+    padding: 80px 20px;
+    background: #f4f4f4;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.nowosci h2 {
+    font-size: 2.5rem;
+    color: #6c63ff;
+    margin-bottom: 20px;
+}
+
+.news-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
+    transition: 0.3s ease-in-out;
+}
+
+.news-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.news-box h3 {
+    font-size: 1.5rem;
+    color: #ff6b00;
+}
+
+.news-box p {
+    font-size: 1rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.news-box .date {
+    display: block;
+    font-size: 0.9rem;
+    color: gray;
+    margin-top: 5px;
+}
+/* Resetowanie stylów */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Nawigacja */
+nav {
+  background: #6c63ff;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffdd57;
+}
+
+/* Sekcja O nas */
+#onas {
+  padding: 100px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.onas-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#onas h2 {
+  font-size: 2.8rem;
+  color: #6c63ff;
+  margin-bottom: 20px;
+}
+
+#onas p {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Styl dla boksów z informacjami */
+.onas-box {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.onas-box h3 {
+  color: #6c63ff;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.onas-box ul {
+  list-style: none;
+}
+
+.onas-box li {
+  font-size: 1.2rem;
+  padding: 5px 0;
+}
+
+/* Przycisk CTA */
+.cta-button {
+  display: inline-block;
+  padding: 15px 25px;
+  margin-top: 20px;
+  background: #6c63ff;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background: #ffdd57;
+  color: black;
+}
+
+/* Stopka */
+footer {
+  text-align: center;
+  background: #222;
+  color: white;
+  padding: 15px;
+  font-size: 1rem;
+  margin-top: 50px;
+}
